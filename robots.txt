@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmavictor156-sketch.github.io/Golden-Jewels-Junior-School/sitemap.xml

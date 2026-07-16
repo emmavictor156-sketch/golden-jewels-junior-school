@@ -155,3 +155,100 @@ behavior:"smooth"
 });
 
 };
+
+// Animated Counters
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute("data-target");
+
+        const count = +counter.innerText;
+
+        const increment = Math.ceil(target / 100);
+
+        if(count < target){
+
+            counter.innerText = count + increment;
+
+            setTimeout(updateCounter,20);
+
+        }else{
+
+            counter.innerText = target;
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.body.scrollTop>300||document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+};
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+window.addEventListener("scroll",function(){
+
+const header=document.querySelector("header");
+
+header.classList.toggle("scrolled",window.scrollY>50);
+
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+        menuToggle.innerHTML = "✖";
+    }else{
+        menuToggle.innerHTML = "☰";
+    }
+
+});
+
+const links=document.querySelectorAll("nav a");
+
+links.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+nav.classList.remove("active");
+
+menuToggle.innerHTML="☰";
+
+});
+
+});
