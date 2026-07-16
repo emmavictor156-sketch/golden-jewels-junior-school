@@ -21,3 +21,45 @@ window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 50);
     }
 });
+
+const slides = document.querySelectorAll(".slide");
+
+let current = 0;
+
+function nextSlide(){
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current >= slides.length){
+
+current = 0;
+
+}
+
+slides[current].classList.add("active");
+
+}
+
+setInterval(nextSlide,3000);
+
+const topBtn = document.getElementById("topBtn");
+
+window.onscroll = function () {
+    if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+};
+
+topBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
