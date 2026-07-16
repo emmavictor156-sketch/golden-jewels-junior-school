@@ -1,0 +1,161 @@
+// Fade in sections when scrolling
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+    sections.forEach(section => {
+
+        const position = section.getBoundingClientRect().top;
+
+        if(position < window.innerHeight - 120){
+
+            section.classList.add("show");
+
+        }
+
+    });
+
+});
+
+
+
+const slides = document.querySelectorAll(".slide");
+
+let current = 0;
+
+function nextSlide(){
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current >= slides.length){
+
+current = 0;
+
+}
+
+slides[current].classList.add("active");
+
+}
+
+setInterval(nextSlide,4000);
+
+// Mobile Menu
+
+const menu = document.getElementById("mobile-menu");
+
+const navbar = document.getElementById("navbar");
+
+menu.addEventListener("click", function(){
+
+navbar.classList.toggle("active");
+
+});
+
+
+// Back to Top Button
+
+const topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+
+if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+
+topBtn.style.display = "block";
+
+}else{
+
+topBtn.style.display = "none";
+
+}
+
+};
+
+topBtn.onclick = function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+// Animated Counters
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute("data-target");
+
+        const count = +counter.innerText;
+
+        const increment = Math.ceil(target / 100);
+
+        if(count < target){
+
+            counter.innerText = count + increment;
+
+            setTimeout(updateCounter,20);
+
+        }else{
+
+            counter.innerText = target;
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+window.addEventListener("scroll",function(){
+
+const header=document.querySelector("header");
+
+header.classList.toggle("scrolled",window.scrollY>50);
+
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+const links=document.querySelectorAll("nav a");
+
+links.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navbar.classList.remove("active");
+
+menuToggle.innerHTML="☰";
+
+});
+
+});

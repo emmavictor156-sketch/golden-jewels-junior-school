@@ -611,40 +611,25 @@ font-size:20px;
 }
 /* Mobile Menu */
 
-.menu-toggle{
-
-display:none;
-
-font-size:32px;
-
-cursor:pointer;
-
-color:rgb(236, 220, 220);
-
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-.menu-toggle{
+    .menu-toggle {
+        display: block;
+    }
 
-display:block;
+    #navbar {
+        display: none;
+    }
 
-}
-
-nav{
-
-display:none;
-
-width:100%;
-
-margin-top:20px;
-
-}
-
-nav.active{
-
-display:block;
-
+    #navbar.active {
+        display: block;
+    }
 }
 
 nav ul{
@@ -667,7 +652,7 @@ flex-wrap:wrap;
 
 }
 
-}
+
 .welcome-banner{
 
 padding:80px 10%;
