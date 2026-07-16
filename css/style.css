@@ -372,7 +372,7 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:30px;
 text-align:center;
-color:white;
+color:rgb(145, 58, 58);
 
 }
 
@@ -388,7 +388,7 @@ color:#FFD700;
 .admissions{
 
 text-align:center;
-background:rgb(234, 233, 240);
+background:rgb(116, 29, 36);
 
 }
 
@@ -592,7 +592,7 @@ text-align:center;
 
 .stat{
 
-color:white;
+color:rgb(131, 40, 40);
 
 }
 
